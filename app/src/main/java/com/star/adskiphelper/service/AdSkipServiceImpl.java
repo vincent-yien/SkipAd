@@ -110,6 +110,7 @@ public class AdSkipServiceImpl {
      * 处理手机界面变动的事件
      * */
     public void onAccessibilityEvent(AccessibilityEvent event) {
+        LogUtil.e(TAG+ " onAccessibilityEvent: "+event);
         if (event.getPackageName() == null || event.getClassName() == null){
             return;
         }
@@ -117,7 +118,7 @@ public class AdSkipServiceImpl {
         String actionClassname = event.getClassName().toString();
         try {
             if(BuildConfig.DEBUG) {
-                LogUtil.i(TAG+ " onAccessibilityEvent : " + event + "," + actionPackageName +","+ actionClassname);
+                LogUtil.e(TAG+ " onAccessibilityEvent : " + event + "," + actionPackageName +","+ actionClassname);
             }
             if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED){
                 boolean isActivity = !actionClassname.startsWith("android.")

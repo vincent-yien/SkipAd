@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import com.star.adskiphelper.utils.LogUtil;
 import com.star.adskiphelper.utils.SkipUtil;
 
 import java.lang.ref.WeakReference;
@@ -23,7 +24,7 @@ public class AdSkipService extends AccessibilityService {
     @Override
     protected void onServiceConnected() {
         super.onServiceConnected();
-        Log.i(TAG, "onServiceConnected: ");
+        LogUtil.i(TAG+ " onServiceConnected: ");
         serviceWeakReference = new WeakReference<>(this);
         if (serviceImpl == null) {
             serviceImpl = new AdSkipServiceImpl(this);
@@ -48,7 +49,6 @@ public class AdSkipService extends AccessibilityService {
     @Override
     public boolean onUnbind(Intent intent) {
         if (serviceImpl != null) {
-//            serviceImpl.onServiceUnBind();
             serviceImpl = null;
         }
         serviceWeakReference = null;

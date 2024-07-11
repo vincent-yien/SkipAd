@@ -5,10 +5,17 @@ plugins {
 android {
     signingConfigs {
         release {
-            storeFile file('D:\\Other\\Sign\\vincent.jks')
-            storePassword '19980525v'
-            keyAlias 'vincent'
-            keyPassword '19980525v'
+            storeFile file('D:\\Other\\Sign\\test.jks')
+            storePassword '19950401v'
+            keyAlias 'vicent'
+            keyPassword '19950401v'
+        }
+
+        debug {
+            storeFile file('D:\\Other\\Sign\\test.jks')
+            storePassword '19950401v'
+            keyAlias 'vicent'
+            keyPassword '19950401v'
         }
     }
     namespace 'com.star.adskiphelper'
