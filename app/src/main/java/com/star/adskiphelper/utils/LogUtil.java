@@ -1,4 +1,4 @@
-package com.giftedcat.adskiphelper.utils;
+package com.star.adskiphelper.utils;
 
 import android.util.Log;
 

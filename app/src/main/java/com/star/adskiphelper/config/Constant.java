@@ -1,4 +1,4 @@
-package com.giftedcat.adskiphelper.config;
+package com.star.adskiphelper.config;
 
 /**
  * 存放一些全局常量

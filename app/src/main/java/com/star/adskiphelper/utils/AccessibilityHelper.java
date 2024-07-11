@@ -1,11 +1,11 @@
-package com.giftedcat.adskiphelper.utils;
+package com.star.adskiphelper.utils;
 
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.giftedcat.adskiphelper.BuildConfig;
-import com.giftedcat.adskiphelper.config.Constant;
-import com.giftedcat.adskiphelper.service.AdSkipService;
+import com.star.adskiphelper.BuildConfig;
+import com.star.adskiphelper.config.Constant;
+import com.star.adskiphelper.service.AdSkipService;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -3,13 +3,21 @@ plugins {
 }
 
 android {
-    namespace 'com.giftedcat.adskiphelper'
+    signingConfigs {
+        release {
+            storeFile file('D:\\Other\\Sign\\vincent.jks')
+            storePassword '19980525v'
+            keyAlias 'vincent'
+            keyPassword '19980525v'
+        }
+    }
+    namespace 'com.star.adskiphelper'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.giftedcat.adskiphelper"
+        applicationId "com.star.adskiphelper"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -20,6 +28,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
 

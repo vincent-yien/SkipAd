@@ -1,4 +1,4 @@
-package com.giftedcat.adskiphelper.service;
+package com.star.adskiphelper.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Intent;
@@ -10,21 +10,17 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.giftedcat.adskiphelper.BuildConfig;
-import com.giftedcat.adskiphelper.config.Constant;
-import com.giftedcat.adskiphelper.config.ProcessAction;
-import com.giftedcat.adskiphelper.utils.AccessibilityHelper;
-import com.giftedcat.adskiphelper.utils.ClickUtil;
-import com.giftedcat.adskiphelper.utils.LogUtil;
-import com.giftedcat.adskiphelper.utils.SkipUtil;
+import com.star.adskiphelper.BuildConfig;
+import com.star.adskiphelper.config.Constant;
+import com.star.adskiphelper.ProcessAction;
+import com.star.adskiphelper.utils.AccessibilityHelper;
+import com.star.adskiphelper.utils.LogUtil;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 广告跳过具体实现类
@@ -120,6 +116,9 @@ public class AdSkipServiceImpl {
         String actionPackageName = event.getPackageName().toString();
         String actionClassname = event.getClassName().toString();
         try {
+            if(BuildConfig.DEBUG) {
+                LogUtil.i(TAG+ " onAccessibilityEvent : " + event + "," + actionPackageName +","+ actionClassname);
+            }
             if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED){
                 boolean isActivity = !actionClassname.startsWith("android.")
                         && !actionClassname.startsWith("androidx.");
@@ -138,7 +137,7 @@ public class AdSkipServiceImpl {
                 executeSkipTask(service.getRootInActiveWindow());
             } else if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED){
                 if (installPackages.contains(actionPackageName)) {
-                    executeSkipTask(event.getSource());
+                    executeSkipTask(service.getRootInActiveWindow());
                 }
             }
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.giftedcat.adskiphelper.config;
+package com.star.adskiphelper;
 
 /**
  * 广告跳过服务的指令

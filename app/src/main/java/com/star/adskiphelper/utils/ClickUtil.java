@@ -1,7 +1,5 @@
-package com.giftedcat.adskiphelper.utils;
+package com.star.adskiphelper.utils;
 
-import android.accessibilityservice.GestureDescription;
-import android.graphics.Path;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 /**

@@ -1,4 +1,4 @@
-package com.giftedcat.adskiphelper.service;
+package com.star.adskiphelper.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.GestureDescription;
@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.giftedcat.adskiphelper.utils.SkipUtil;
+import com.star.adskiphelper.utils.SkipUtil;
 
 import java.lang.ref.WeakReference;
 
@@ -48,7 +48,7 @@ public class AdSkipService extends AccessibilityService {
     @Override
     public boolean onUnbind(Intent intent) {
         if (serviceImpl != null) {
-            serviceImpl.onServiceUnBind();
+//            serviceImpl.onServiceUnBind();
             serviceImpl = null;
         }
         serviceWeakReference = null;

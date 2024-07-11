@@ -1,13 +1,9 @@
-package com.giftedcat.adskiphelper.utils;
+package com.star.adskiphelper.utils;
 
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
-
-import com.giftedcat.adskiphelper.config.Constant;
-
-import java.util.Set;
 
 public class SkipUtil {
 
